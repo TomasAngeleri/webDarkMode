@@ -1,3 +1,40 @@
 body{
-    background: red;
+    --color-bg:#ddd;
+    --color-texto:#ee6352;
+}
+
+body.dark-theme{
+    --color-bg:rgb(75, 74, 74);
+    --color-texto:#f3a632;
+}
+
+
+body.dark-theme img {
+    filter: brightness(.8) contrast(1.2);
+    
+}
+
+/* Si en windows tiene el modo dark va a entrar aca */
+@media (prefers-color-scheme: dark) {
+    body{
+        --color-bg:rgb(65, 63, 63);
+        --color-texto:#7c1608;
+    }
+
+    body.light-theme{
+        --color-bg:#ddd;
+        --color-texto:#ee6352;
+    }
+
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
+}
+
+body{
+    background-color: var(--color-bg);
+}
+
+h1{
+    color:var(--color-texto)
 }
